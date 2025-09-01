@@ -36,31 +36,26 @@
         header {
             background: linear-gradient(135deg, #5a189a 62%, #f72585 100%);
             color: #fff;
-            padding: 36px 0 0 0;
             box-shadow: var(--shadow);
         }
         .nav-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 0 56px;
             min-height: 72px;
-            animation: navSlideDown 1.1s cubic-bezier(.6,.2,.4,1);
+            width: 100%;
             position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            z-index: 999;
+            z-index: 9999;
             background: linear-gradient(135deg, #5a189a 62%, #f72585 100%);
-        }
-        @keyframes navSlideDown {
-            from { opacity: 0; transform: translateY(-40px);}
-            to   { opacity: 1; transform: translateY(0);}
+            box-shadow: var(--shadow);
         }
         nav {
             display: flex;
             gap: 34px;
             flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
         }
         nav a {
             color: #fff;
@@ -72,6 +67,7 @@
             transition: color 0.19s;
             font-family: 'Montserrat', sans-serif;
             letter-spacing: .3px;
+            white-space: nowrap;
         }
         nav a.active, nav a:hover {
             color: var(--accent);
@@ -194,6 +190,7 @@
             flex: 1;
             background: var(--section-bg);
             padding: 52px 56px 0 56px;
+            box-sizing: border-box;
         }
         section {
             margin-bottom: 48px;
@@ -388,13 +385,16 @@
         }
         @media (max-width: 900px) {
             .nav-container, .hero, main { padding: 18px 4vw; }
-            nav { gap: 16px;}
+            nav { gap: 16px; }
+            .hero h1 { font-size: 2.1em;}
         }
         @media (max-width: 600px) {
             .nav-container, .hero, main { padding: 8px 2vw; }
             nav { gap: 8px; flex-wrap: wrap;}
+            nav a { font-size: 1em; }
             .section-title { font-size: 1em;}
             .cert-list .cert-img {height: 36px; width: 36px;}
+            .hero h1 { font-size: 1.45em;}
         }
     </style>
     <script>
